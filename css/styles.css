@@ -2,13 +2,14 @@
 
 :root {
   --bg-color: #1a1d21;
-  --card-bg-color: #23282e;
-  --border-color: #3a414a;
+  --card-bg-color: #23282e; /* Hintergrund der "schönen Boxen" */
+  --border-color: #3a414a;  /* Rand der "schönen Boxen" und Buttons */
   --primary-text-color: #e6edf3;
   --secondary-text-color: #7d8590;
-  --accent-color-1: #2188ff;
-  --accent-color-2: #5aa7ff;
-  --accent-color-about: #4db6ac;
+  --accent-color-1: #2188ff; /* Hauptakzent (z.B. Icons in Titeln) */
+  --accent-color-2: #5aa7ff; /* Link-Akzent */
+  --accent-color-about: #4db6ac; /* Teal für "Über mich" */
+  --announcement-text-color: var(--accent-color-about); /* Ankündigungen auch in Teal */
   --link-hover-bg: #3a414a;
   --button-bg: #2a3038;
   --button-text: var(--accent-color-2);
@@ -17,9 +18,17 @@
   --header-contact-bg: var(--button-bg);
   --header-contact-text: var(--accent-color-2);
   --header-contact-hover-bg: var(--link-hover-bg);
+  /* Farben für nicht verfügbare Buttons */
+  --unavailable-bg-color: #2d2121;       /* Dunkelroter Hintergrund (aus deinem Original-CSS) */
+  --unavailable-text-color: #dc4a37;     /* Rötliche Schrift (aus deinem Original-CSS) */
+  --unavailable-border-color: #cf2b3e33; /* Sehr transparenter roter Rand (aus deinem Original-CSS, leicht angepasst) */
+  /* +++ NEU: Hover-Farbe für nicht verfügbare Buttons +++ */
+  --unavailable-hover-bg-color: #83272777; /* Roter Hover-Hintergrund (aus deinem Original-CSS) */
+  --unavailable-hover-border-color: #cf2b3e88; /* Etwas sichtbarer roter Rand im Hover */
+
   --box-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.2);
   --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.3);
-  --border-radius: 8px;
+  --border-radius: 8px; /* Radius für Boxen und Buttons */
   --font-main: 'Lato', 'Arial', sans-serif;
 }
 
@@ -73,6 +82,8 @@ body {
   font-size: 1rem;
   color: var(--secondary-text-color);
   font-weight: 300;
+  display: block;
+  margin-top: 0.25rem;
 }
 
 .header-contact {
@@ -102,13 +113,15 @@ body {
   margin-right: 0.5rem;
 }
 
-/* Content Sections */
+/* Content Sections ("Schöne Boxen") */
 .content-section {
-  background-color: var(--card-bg-color);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border-color);
+  background-color: var(--card-bg-color); /* Hintergrundfarbe der Box */
+  padding: 1.5rem;                         /* Innenabstand der Box */
+  border-radius: var(--border-radius);     /* Abgerundete Ecken der Box */
+  margin-bottom: 1.5rem;                   /* Abstand zwischen den Boxen */
+  border: 1px solid var(--border-color);   /* Rand der Box */
+  /* Optional: Leichten Schatten hinzufügen für mehr Tiefe */
+  /* box-shadow: var(--box-shadow-light); */
 }
 
 .section-title {
@@ -121,10 +134,10 @@ body {
 }
 .section-title i.icon {
   margin-right: 0.75rem;
-  color: var(--accent-color-1); /* Akzentfarbe für Icons in Titeln */
+  color: var(--accent-color-1);
 }
 
-/* About Me Section */
+/* About Me Section (Hauptseite) */
 .about-me-text {
   font-size: 1.1rem;
   color: var(--accent-color-about);
@@ -135,33 +148,85 @@ body {
   font-weight: 700;
 }
 
-/* Links Section */
+/* Announcement Section (GRA Seite) */
+.announcement-text {
+  padding-top: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--announcement-text-color);
+  font-weight: bold;
+}
+
+/* Zeitplan Section (GRA Seite) */
+.section-zeit {
+  padding-top: 0.25rem;
+  font-size: 1rem;
+  color: var(--primary-text-color);
+  margin-bottom: 0.5rem;
+}
+.section-zeit a {
+  color: var(--accent-color-2);
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+.section-zeit a:hover {
+  color: var(--primary-text-color);
+  text-decoration: underline;
+}
+
+/* Link/Button Container */
 .quick-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.link-button {
+/* Gemeinsame Button Styles */
+.link-button,
+.link-button-unav {
   display: inline-flex;
   align-items: center;
-  padding: 0.75rem 1rem;
-  background-color: var(--button-bg);
-  border: 1px solid var(--button-border);
-  color: var(--button-text);
+  padding: 0.75rem 1rem; /* Angepasst für Konsistenz mit deinem Original */
+  border: 1px solid;    /* Angepasst, Dicke entfernt */
   text-decoration: none;
-  border-radius: var(--border-radius);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: var(--border-radius); /* Einheitlicher Radius */
+  transition: all 0.3s ease; /* Transition aus deinem Original */
   font-size: 1rem;
+}
+/* Gemeinsame Icon Styles */
+.link-button i.icon,
+.link-button-unav i.icon {
+  margin-right: 0.6rem; /* Angepasst an dein Original */
+}
+
+/* Specific Available Button Styles */
+.link-button {
+  background-color: var(--button-bg);
+  border-color: var(--button-border);
+  color: var(--button-text);
+  cursor: pointer;
 }
 .link-button:hover {
   background-color: var(--button-hover-bg);
   transform: translateY(-2px);
   box-shadow: var(--box-shadow-hover);
   color: var(--primary-text-color);
+  border-color: var(--link-hover-bg);
 }
-.link-button i.icon {
-  margin-right: 0.5rem;
+
+/* Specific Unavailable Button Styles */
+.link-button-unav {
+  background-color: var(--unavailable-bg-color);
+  border-color: var(--unavailable-border-color);
+  color: var(--unavailable-text-color);
+  cursor: default; /* Behält Standard-Cursor bei, um Inaktivität anzuzeigen */
+}
+/* +++ GEÄNDERT: Hover-Effekt für Unavailable Buttons +++ */
+.link-button-unav:hover {
+  background-color: var(--unavailable-hover-bg-color); /* Roter Hover-Hintergrund */
+  border-color: var(--unavailable-hover-border-color); /* Deutlicherer roter Rand im Hover */
+  transform: translateY(-2px);                         /* Gleicher Schwebe-Effekt */
+  box-shadow: var(--box-shadow-hover);                 /* Gleicher Schatten-Effekt */
+  /* Farbe bleibt rot, Cursor bleibt default */
 }
 
 /* Footer (optional) */
@@ -179,26 +244,25 @@ body {
     margin: 1rem auto;
     padding: 1rem;
   }
-
   .site-header {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .header-contact {
     text-align: left;
     width: 100%;
     justify-content: flex-start;
   }
-
   .quick-links {
-    flex-direction: column;
-    align-items: stretch;
+    /* Ggf. Buttons untereinander, falls gewünscht */
+    /* flex-direction: column; */
+    /* align-items: stretch; */
   }
-
-  .link-button {
-    justify-content: center;
-    text-align: center;
+  .link-button,
+  .link-button-unav {
+     /* Ggf. für Spaltenlayout anpassen */
+    /* justify-content: center; */
+    /* text-align: center; */
   }
 }
 
@@ -206,11 +270,9 @@ body {
   html {
     font-size: 93.75%;
   }
-
   .header-title {
     font-size: 1.5rem;
   }
-
   .contact-link {
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
