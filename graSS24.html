@@ -4,90 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <title>GRA-Tutorium | Danial Arbabi</title>
+  <title>GRA-Tutorium (Archiv SS24) | Danial Arbabi</title>
 </head>
 
 <body>
 
   <div class="container">
-    <header>
-      <div class="header-title"><strong>Grundlagen: Rechnerarchitektur</strong> - SystemC<br>SoSe 2024 | Danial Arbabi</div>
+    <header class="site-header">
+      <div class="header-title">
+        <strong>Grundlagen: Rechnerarchitektur</strong> - SystemC<br>
+        <small>SoSe 2024 | Danial Arbabi</small>
+      </div>
       <div class="header-contact">
-        <a href="mailto:danial.arbabi@tum.de"><i class="fa fa-envelope"></i> E-Mail</a>
-        <a href="https://zulip.in.tum.de/#narrow/dm/8216-Danial-Arbabi" target="_blank">
-          <i class="fa fa-comments"></i> Zulip: Danial Arbabi</a>
+        <a href="mailto:danial.arbabi@tum.de" class="contact-link"><i class="fa fa-envelope"></i> E-Mail</a>
+        <a href="https://zulip.in.tum.de/#narrow/dm/8216-Danial-Arbabi" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <i class="fa fa-comments"></i> Zulip: Danial Arbabi
+        </a>
       </div>
     </header>
 
-    <section class="week-section">
-      <div class="week-title"><i class ="fa fa-bullhorn icon"></i>Ankündigungen:</div>
-      <div class="announcment-text">
+    <section class="content-section">
+      <h2 class="section-title"><i class ="fa fa-bullhorn icon"></i> Ankündigungen:</h2>
+      <div class="announcement-text">
         Hier findet Ihr die Tutoriumsfolien vom <strong>SS24</strong>.<br>
         Falls Ihr euch den Stoff schonmal im Voraus anschauen wollt,<br>
-        könnt Ihr das gerne hier machen.<br> 
+        könnt Ihr das gerne hier machen.<br>
         <strong>Viel Spaß!</strong>
-
       </div>
     </section>
 
     <!-- Zeitplan -->
-    <section class="week-section">
-      <div class="week-title"><i class ="fa fa-clock-o icon"></i>Zeitplan:</div>
+    <section class="content-section">
+      <h2 class="section-title"><i class ="fa fa-clock-o icon"></i> Zeitplan (alt):</h2>
       <div class="section-zeit">
         <s>
-          <a href="https://zulip.in.tum.de/#narrow/stream/2276-GRA-Tutorium---Gruppe-29">Gruppe 29</a> 
-          - Freitag 12:15 Uhr: 
-          <a href="https://nav.tum.de/room/5608.EG.059">5608.EG.059</a> | 00.08.059
+          <a href="https://zulip.in.tum.de/#narrow/stream/2276-GRA-Tutorium---Gruppe-29" target="_blank" rel="noopener noreferrer">Gruppe 29</a>
+          - Freitag 12:15 Uhr:
+          <a href="https://nav.tum.de/room/5608.EG.059" target="_blank" rel="noopener noreferrer">5608.EG.059</a> | 00.08.059
         </s>
       </div>
       <div class="section-zeit">
         <s>
-          <a href="https://zulip.in.tum.de/#narrow/stream/2279-GRA-Tutorium---Gruppe-32">Gruppe 32</a> 
-          - Freitag 15:00 Uhr: 
-          <a href="https://nav.tum.de/room/5608.EG.036">5608.EG.036</a> | 00.08.036
+          <a href="https://zulip.in.tum.de/#narrow/stream/2279-GRA-Tutorium---Gruppe-32" target="_blank" rel="noopener noreferrer">Gruppe 32</a>
+          - Freitag 15:00 Uhr:
+          <a href="https://nav.tum.de/room/5608.EG.036" target="_blank" rel="noopener noreferrer">5608.EG.036</a> | 00.08.036
         </s>
       </div>
     </section>
 
-
     <!-- Nützliche Links -->
-    <section class="week-section">
-      <div class="week-title"><i class="fa fa-chain icon"></i>Nützliche Links:</div>
-      <!--<a href="https://home.in.tum.de/~arb/section2" class="link-button">Sektion 1</a>-->
-      <a href="https://home.in.tum.de/~ketz/ssh" class="link-button"><i class="fa fa-user icon"></i>SSH-Guide</a>
-      <a href="https://www.cit.tum.de/ito/fuer-studierende/fuer-neue/" class="link-button"><i class="fa fa-laptop"></i>IOT-Wiki</a>
-      <a href="https://tum.sexy" class="link-button"><i class="fa fa-bookmark-o icon"></i>TUM Redirects</a>
-      <a href="https://godbolt.org" class="link-button"><i class="fa fa-microchip icon"></i>Compiler Explorer</a>
-      <a href="https://graphics.stanford.edu/~seander/bithacks.html" class="link-button"><i class="fa fa-cog icon"></i>Bit-Hacks</a>
-      <a href="https://www.learnsystemc.com" class="link-button"><i class="fa fa-desktop icon"></i>SystemC</a>
+    <section class="content-section">
+      <h2 class="section-title"><i class="fa fa-link icon"></i> Nützliche Links:</h2>
+      <nav class="quick-links">
+        <a href="https://home.in.tum.de/~ketz/ssh" class="link-button" target="_blank" rel="noopener noreferrer"><i class="fa fa-user icon"></i>SSH-Guide</a>
+        <a href="https://www.cit.tum.de/ito/fuer-studierende/fuer-neue/" class="link-button" target="_blank" rel="noopener noreferrer"><i class="fa fa-laptop icon"></i>IOT-Wiki</a>
+        <a href="https://tum.sexy" class="link-button" target="_blank" rel="noopener noreferrer"><i class="fa fa-bookmark-o icon"></i>TUM Redirects</a>
+        <a href="https://godbolt.org" class="link-button" target="_blank" rel="noopener noreferrer"><i class="fa fa-microchip icon"></i>Compiler Explorer</a>
+        <a href="https://graphics.stanford.edu/~seander/bithacks.html" class="link-button" target="_blank" rel="noopener noreferrer"><i class="fa fa-cog icon"></i>Bit-Hacks</a>
+        <a href="https://www.learnsystemc.com" class="link-button" target="_blank" rel="noopener noreferrer"><i class="fa fa-desktop icon"></i>SystemC</a>
+      </nav>
     </section>
 
     <!-- Folien Download -->
-    <section class="week-section">
-      <div class="week-title"><i class="fa fa-pencil icon"></i>Folien:</div>
-      <!--<a href="#" class="link-button"><i class="fa fa-download icon"></i>Folien</a>-->
-      <a href="slides/SoSe24/Woche_02.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 2</a> <!--slides/Woche_02.pdf & download-->
-      <a href="slides/SoSe24/Woche_03.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 3</a>
-      <a href="slides/SoSe24/Woche_04.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 4</a>
-      <a href="slides/SoSe24/Woche_05.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 5</a>
-      <a href="slides/SoSe24/Woche_06.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 6</a>
-      <a href="slides/SoSe24/Woche_07.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 7</a>
-      <a href="slides/SoSe24/Woche_08.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 8</a>
-      <a href="slides/SoSe24/Woche_09.pdf" class="link-button"><i class="fa fa-download icon"> </i>Woche 9</a>
+    <section class="content-section">
+      <h2 class="section-title"><i class="fa fa-pencil icon"></i> Folien (SS24):</h2>
+       <div class="quick-links">
+        <a href="slides/SoSe24/Woche_02.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 2</a>
+        <a href="slides/SoSe24/Woche_03.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 3</a>
+        <a href="slides/SoSe24/Woche_04.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 4</a>
+        <a href="slides/SoSe24/Woche_05.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 5</a>
+        <a href="slides/SoSe24/Woche_06.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 6</a>
+        <a href="slides/SoSe24/Woche_07.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 7</a>
+        <a href="slides/SoSe24/Woche_08.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 8</a>
+        <a href="slides/SoSe24/Woche_09.pdf" class="link-button"><i class="fa fa-download icon"></i> Woche 9</a>
+      </div>
     </section>
   </div>
-
- 
-
-
 </body>
-<!-- COUNTER
-  <footer>
-  <div class="visit-counter">
-    <div id="visitCount" ></div>
-    <script src="scripts/visitcounter.js"></script>
-  </div>
-</footer>-->
 </html>
